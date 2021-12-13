@@ -14,5 +14,9 @@ public class Main {
         List<Integer> depths = lines.stream().map(Integer::parseInt).collect(Collectors.toList());
         SonarSweeper sonarSweeper = new LoopSonarSweeper();
         System.out.println(sonarSweeper.countIncreases(depths)); // result: 1665
+
+        // part two
+        SonarSweeper threeWindowSumSonarSweeper = new ThreeWindowSumLoopSonarSweeper();
+        System.out.println(threeWindowSumSonarSweeper.countIncreases(depths)); // result: 1702
     }
 }
