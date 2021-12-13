@@ -8,31 +8,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SonarSweeperTest {
     @Test
-    void givenAnEmptyList_whenCountIncreases_thenReturn0() {
+    void givenAnEmptyList_whenCountIncreases_thenReturnZero() {
         SonarSweeper sonarSweeper = new LoopSonarSweeper();
         assertEquals(0, sonarSweeper.countIncreases(List.of()));
     }
 
     @Test
-    void givenOneElement_whenCountIncreases_thenReturn0() {
+    void givenOneElement_whenCountIncreases_thenReturnZero() {
         SonarSweeper sonarSweeper = new LoopSonarSweeper();
         assertEquals(0, sonarSweeper.countIncreases(List.of(200)));
     }
 
     @Test
-    void givenTwoEqualElements_whenCountIncreases_thenReturn0() {
+    void givenNoIncrease_whenCountIncreases_thenReturnZero() {
         SonarSweeper sonarSweeper = new LoopSonarSweeper();
         assertEquals(0, sonarSweeper.countIncreases(List.of(200, 200)));
     }
 
     @Test
-    void givenTwoDecreasingElements_whenCountIncreases_thenReturn0() {
+    void givenOneDecrease_whenCountIncreases_thenReturnZero() {
         SonarSweeper sonarSweeper = new LoopSonarSweeper();
         assertEquals(0, sonarSweeper.countIncreases(List.of(200, 190)));
     }
 
     @Test
-    void givenTwoIncreasingElements_whenCountIncreases_thenReturn1() {
+    void givenOneIncrease_whenCountIncreases_thenReturnOne() {
         SonarSweeper sonarSweeper = new LoopSonarSweeper();
         assertEquals(1, sonarSweeper.countIncreases(List.of(200, 210)));
     }
