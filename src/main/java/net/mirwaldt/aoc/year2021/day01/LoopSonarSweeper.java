@@ -5,8 +5,16 @@ import java.util.List;
 public class LoopSonarSweeper implements SonarSweeper {
     @Override
     public int countIncreases(List<Integer> depths) {
-        if (depths.size() == 2) {
-            return (depths.get(0) < depths.get(1)) ? 1 : 0;
+        if (2 <= depths.size()) {
+            int count = 0;
+            for (int i = 1; i < depths.size(); i++) {
+                int left = depths.get(i - 1);
+                int right = depths.get(i);
+                if(left < right) {
+                    count++;
+                }
+            }
+            return count;
         } else {
             return 0;
         }
