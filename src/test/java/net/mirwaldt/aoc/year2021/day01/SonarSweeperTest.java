@@ -30,4 +30,10 @@ public class SonarSweeperTest {
         SonarSweeper sonarSweeper = new LoopSonarSweeper();
         assertEquals(0, sonarSweeper.countIncreases(List.of(200, 190)));
     }
+
+    @Test
+    void givenTwoIncreasingElements_whenCountIncreases_thenReturn1() {
+        SonarSweeper sonarSweeper = new LoopSonarSweeper();
+        assertEquals(1, sonarSweeper.countIncreases(List.of(200, 210)));
+    }
 }
