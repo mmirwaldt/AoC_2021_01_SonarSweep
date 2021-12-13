@@ -48,4 +48,10 @@ public class SonarSweeperTest {
         SonarSweeper sonarSweeper = new LoopSonarSweeper();
         assertEquals(2, sonarSweeper.countIncreases(List.of(188, 190, 200)));
     }
+
+    @Test
+    void givenSampleFromPuzzle_whenCountIncreases_thenReturnSeven() {
+        SonarSweeper sonarSweeper = new LoopSonarSweeper();
+        assertEquals(7, sonarSweeper.countIncreases(List.of(199, 200, 208, 210, 200, 207, 240, 269, 260, 263)));
+    }
 }
